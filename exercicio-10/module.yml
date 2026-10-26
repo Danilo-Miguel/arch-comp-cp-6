@@ -1,0 +1,4 @@
+name: "Pilha: call e ret"
+challenges:
+  - id: pilha-call-ret
+    name: "De onde ret obtém o próximo RIP?"

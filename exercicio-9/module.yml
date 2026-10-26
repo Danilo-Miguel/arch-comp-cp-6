@@ -1,0 +1,4 @@
+name: "Buffer overflow: retorno benigno"
+challenges:
+  - id: bof-ret2win
+    name: "Entenda o destino ret2win"

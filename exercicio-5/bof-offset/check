@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="bof-offset"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-5.txt" "c7c4f94a01c5fff8e92122e187332ab2c23882d00f4381d065d98a84168a2067" '^[0-9]{1,3}$'

@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="pilha-rsp"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-6.txt" "3b4e5f1befa3f069c4a85c4b248a445d64816881f8caa4d7f1ce654bf89c2e06" '^[0-9]{1,3}$'

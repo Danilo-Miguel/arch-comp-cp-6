@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="bof-vizinho"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-1.txt" "e0738c23d17299778bbedfac098b912ec61cdb3a1c0491d6969b92deeb1af5ce" '^0x[0-9a-f]{8}$'

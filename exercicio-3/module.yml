@@ -1,0 +1,4 @@
+name: "Shellcode: saída controlada"
+challenges:
+  - id: shellcode-exit
+    name: "Primeiro shellcode: encerramento seguro"

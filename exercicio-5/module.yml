@@ -1,0 +1,4 @@
+name: "Buffer overflow: offset"
+challenges:
+  - id: bof-offset
+    name: "Calcule o offset até o retorno"

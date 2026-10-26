@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="bof-ret2win"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-9.txt" "7338fc5c32506694d4770bf26756d3f7ab24462c2235e41cf1f65ae0a32351c9" '^[a-z_][a-z0-9_]*$'

@@ -1,0 +1,4 @@
+name: "Shellcode: constante na pilha"
+challenges:
+  - id: shellcode-exit42
+    name: "Saia com código 42"

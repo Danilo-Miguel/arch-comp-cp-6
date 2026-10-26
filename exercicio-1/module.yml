@@ -1,0 +1,4 @@
+name: "Buffer overflow: dados adjacentes"
+challenges:
+  - id: bof-vizinho
+    name: "Quando a entrada alcança a variável vizinha"

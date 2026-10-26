@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="shellcode-exit42"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-7.txt" "86723d5730cccb2c9185260b8774f2e84fca6eba9a50385b7acc5d759618b407" '^[0-9a-f]+$'

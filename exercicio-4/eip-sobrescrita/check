@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="eip-sobrescrita"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-4.txt" "520bd27a0f66fe241d961569693707946d1c6f8eae1aee190af2a9c997ffeff9" '^0x[0-9a-f]{8}$'

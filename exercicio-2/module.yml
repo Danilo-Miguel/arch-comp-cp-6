@@ -1,0 +1,4 @@
+name: "Pilha: push, pop e LIFO"
+challenges:
+  - id: pilha-lifo
+    name: "Observe a ordem LIFO"

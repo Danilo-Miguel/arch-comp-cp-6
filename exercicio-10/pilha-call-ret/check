@@ -1,0 +1,5 @@
+#!/usr/bin/exec-suid -- /bin/bash -p
+set -euo pipefail
+CHALLENGE_ID="pilha-call-ret"
+source /challenge/check-common.sh
+check_answer "/home/hacker/resposta-10.txt" "9c2bff97c0048fd1e66842c5e2da8d9d9e7d7297e7d003978dfca4b510f88815" '^[a-z-]+$'
