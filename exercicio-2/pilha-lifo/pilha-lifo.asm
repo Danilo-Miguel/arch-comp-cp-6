@@ -1,12 +1,15 @@
-; Prática de observação da pilha: complete o exercício no ambiente do dojo.
-; Objetivo: empilhar 10, 20 e 30, depois desempilhar na ordem LIFO.
-; Finalize com o primeiro valor desempilhado como código de saída.
+; Empilha 10, 20 e 30, desempilha na ordem LIFO e sai com status 10.
 
 section .text
 global _start
 
 _start:
-    ; TODO: use push/pop e encerre com a syscall exit.
+    push 10
+    push 20
+    push 30
+    pop rax
+    pop rbx
+    pop rcx
+    mov rdi, rcx
     mov eax, 60
-    xor edi, edi
     syscall

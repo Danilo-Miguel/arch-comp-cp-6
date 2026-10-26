@@ -143,7 +143,9 @@ check_answer() {
         exit 1
     fi
 
-    invalid_bytes=$(as_student tr -d '\11\12\15\40-\176' "$answer_path" | wc -c) || {
+    invalid_bytes=$(as_student cat -- "$answer_path" |
+        tr -d '\11\12\15\40-\176' |
+        wc -c) || {
         echo "Resposta ilegivel (nao conta como tentativa)."
         exit 1
     }

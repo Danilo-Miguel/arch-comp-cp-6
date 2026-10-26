@@ -1,8 +1,10 @@
-; Complete este arquivo no ambiente local do dojo.
-; Objetivo: syscall exit(0), sem outras ações.
+; Encerra normalmente com status 0.
 
 section .text
 global _start
 
 _start:
-    ; TODO: implementar a saída normal com código zero.
+    xor edi, edi
+    push 60
+    pop rax
+    syscall

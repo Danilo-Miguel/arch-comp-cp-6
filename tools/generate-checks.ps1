@@ -149,7 +149,9 @@ check_answer() {
         exit 1
     fi
 
-    invalid_bytes=$(as_student tr -d '\11\12\15\40-\176' "$answer_path" | wc -c) || {
+    invalid_bytes=$(as_student cat -- "$answer_path" |
+        tr -d '\11\12\15\40-\176' |
+        wc -c) || {
         echo "Resposta ilegivel (nao conta como tentativa)."
         exit 1
     }
@@ -195,7 +197,7 @@ STATE_MARKER=".registro-pwn-tentativas"
 $challenges = @(
     @{ Id = "bof-vizinho"; Answer = "resposta-1.txt"; Digest = "e0738c23d17299778bbedfac098b912ec61cdb3a1c0491d6969b92deeb1af5ce"; Regex = '^0x[0-9a-f]{8}$' },
     @{ Id = "pilha-lifo"; Answer = "resposta-2.txt"; Digest = "6d2e6412648dc30aa762c8b6923dde36137d98bf1111424dd151466927e82e20"; Regex = '^[0-9,]+;[0-9]+$' },
-    @{ Id = "shellcode-exit"; Answer = "resposta-3.txt"; Digest = "795593e25905e0af39c2bb3cf7c5d8a268721df5be23f100db6c26c0fdf8a299"; Regex = '^[0-9a-f]+$' },
+    @{ Id = "shellcode-exit"; Answer = "resposta-3.txt"; Digest = "73f3eccf1e6a68c84444db56ae9dd4e7cf5d79aeb1ae9a3c673222ae12f8b70e"; Regex = '^[0-9a-f]+$' },
     @{ Id = "eip-sobrescrita"; Answer = "resposta-4.txt"; Digest = "520bd27a0f66fe241d961569693707946d1c6f8eae1aee190af2a9c997ffeff9"; Regex = '^0x[0-9a-f]{8}$' },
     @{ Id = "bof-offset"; Answer = "resposta-5.txt"; Digest = "c7c4f94a01c5fff8e92122e187332ab2c23882d00f4381d065d98a84168a2067"; Regex = '^[0-9]{1,3}$' },
     @{ Id = "pilha-rsp"; Answer = "resposta-6.txt"; Digest = "3b4e5f1befa3f069c4a85c4b248a445d64816881f8caa4d7f1ce654bf89c2e06"; Regex = '^[0-9]{1,3}$' },

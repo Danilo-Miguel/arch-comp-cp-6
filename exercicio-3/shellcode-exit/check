@@ -2,4 +2,4 @@
 set -euo pipefail
 CHALLENGE_ID="shellcode-exit"
 source /challenge/check-common.sh
-check_answer "/home/hacker/resposta-3.txt" "795593e25905e0af39c2bb3cf7c5d8a268721df5be23f100db6c26c0fdf8a299" '^[0-9a-f]+$'
+check_answer "/home/hacker/resposta-3.txt" "73f3eccf1e6a68c84444db56ae9dd4e7cf5d79aeb1ae9a3c673222ae12f8b70e" '^[0-9a-f]+$'

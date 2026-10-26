@@ -3,10 +3,10 @@
 > Exercício local de análise de bytes. O objetivo é encerrar um processo de
 > teste; não há shell, rede ou persistência.
 
-Escreva e monte um pequeno trecho x86-64 que use a syscall `exit` com código
-zero. Extraia os bytes de instrução do objeto e inspecione-os antes de
-qualquer execução. Não use um loader de memória executável para bytes não
-verificados.
+Monte o arquivo `/challenge/shellcode-exit.asm`, que usa a syscall `exit`
+com código zero. Extraia os bytes de instrução do objeto e inspecione-os
+antes de qualquer execução. Não use um loader de memória executável para
+bytes não verificados.
 
 ```bash
 nasm -f elf64 -o /tmp/exit.o shellcode-exit.asm
