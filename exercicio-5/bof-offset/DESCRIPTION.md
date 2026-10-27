@@ -4,9 +4,8 @@
 > de terceiros. Você só pode errar uma vez; o segundo erro invalida o desafio.
 
 ### Objetivo
-Calcular quantos bytes existem entre o começo do espaço reservado para os dados
-locais da função e o endereço de retorno (o endereço para onde a função volta
-quando termina).
+Calcular quantos bytes existem entre o início do buffer (a variável local) e o
+endereço de retorno (o endereço para onde a função volta quando termina).
 
 ### O que já vem pronto
 Este desafio é só de cálculo. Não há arquivo para compilar nem GDB para rodar.
@@ -14,13 +13,13 @@ Use os tamanhos do exemplo da aula (o mesmo do PDF de Buffer Overflow),
 mostrados abaixo.
 
 ### Passo a passo
-Na pilha, do começo dos dados locais até o endereço de retorno, existem dois
-campos antes dele:
+Na pilha, do início do buffer até o endereço de retorno, existem dois campos
+antes dele:
 
 | Campo | Tamanho |
 |---|---|
-| Espaço dos dados locais (buffer) | 64 bytes |
-| Valor de controle salvo (RBP salvo) | 8 bytes |
+| Buffer (variável local) | 64 bytes |
+| RBP salvo (o registrador base guardado na pilha) | 8 bytes |
 
 1. Some os dois campos que ficam antes do endereço de retorno:
    `64 + 8`.

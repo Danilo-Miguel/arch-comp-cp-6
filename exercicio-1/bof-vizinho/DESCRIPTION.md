@@ -4,23 +4,25 @@
 > Você só pode errar uma vez; o segundo erro invalida este desafio.
 
 ### Objetivo
-Descobrir qual valor hexadecimal a sua entrada acaba gravando em uma variável
-vizinha, que fica na memória logo depois de um espaço pequeno (8 caracteres).
+Descobrir qual valor hexadecimal a sua entrada acaba gravando na variável
+vizinha, que fica na memória logo depois de um buffer de 8 caracteres.
 
 ### O que já vem pronto
 O programa `/challenge/bof-vizinho.c` já está no ambiente. Você não escreve
-nada, só compila e executa. Por dentro, ele guarda uma caixa de 8 caracteres e,
-logo em seguida, um número chamado `autorizado`. Ao copiar o texto que você
-passa para dentro dessa caixa, o programa não confere o tamanho. Então, se você
-digitar mais de 8 caracteres, o excesso vaza para o número vizinho.
+nada, só compila e executa. Por dentro, ele tem duas variáveis guardadas uma ao
+lado da outra na memória: um buffer de 8 caracteres e, logo depois dele, a
+variável `autorizado`, que guarda um número. Ao copiar o texto que você passa
+para o buffer, o programa não confere o tamanho. Então, se você digitar mais de
+8 caracteres, o que passa do limite continua sendo escrito na memória seguinte e
+acaba caindo dentro da variável `autorizado`.
 
 ### Passo a passo
 1. Compile o programa:
    ```bash
    gcc -O0 -fno-stack-protector /challenge/bof-vizinho.c -o /tmp/bof-vizinho
    ```
-2. Execute passando 12 letras `A`. As 8 primeiras enchem a caixa; as 4 seguintes
-   vazam para o número vizinho:
+2. Execute passando 12 letras `A`. As 8 primeiras preenchem o buffer; as 4
+   seguintes invadem a variável vizinha:
    ```bash
    /tmp/bof-vizinho AAAAAAAAAAAA
    ```
