@@ -4,40 +4,48 @@
 > de terceiros. Você só pode errar uma vez; o segundo erro invalida o desafio.
 
 ### Objetivo
-Calcular o **deslocamento (offset) em bytes** entre o início do buffer local e o
-endereço de retorno dentro do frame da função.
+Calcular quantos bytes existem entre o começo do espaço reservado para os dados
+locais da função e o endereço de retorno (o endereço para onde a função volta
+quando termina).
 
 ### O que já vem pronto
-Este desafio é **conceitual**: não há arquivo para compilar nem GDB para rodar.
-Use o layout do frame descrito abaixo (o mesmo do PDF de Buffer Overflow).
+Este desafio é só de cálculo. Não há arquivo para compilar nem GDB para rodar.
+Use os tamanhos do exemplo da aula (o mesmo do PDF de Buffer Overflow),
+mostrados abaixo.
 
 ### Passo a passo
-No exemplo x86-64 da aula, a pilha, do início do buffer até o endereço de
-retorno, contém:
+Na pilha, do começo dos dados locais até o endereço de retorno, existem dois
+campos antes dele:
 
 | Campo | Tamanho |
 |---|---|
-| Buffer local | 64 bytes |
-| RBP salvo | 8 bytes |
-| Endereço de retorno | (é o destino) |
+| Espaço dos dados locais (buffer) | 64 bytes |
+| Valor de controle salvo (RBP salvo) | 8 bytes |
 
-1. Some os campos que ficam **antes** do endereço de retorno:
-   `64 (buffer) + 8 (RBP salvo)`.
-2. O resultado é quantos bytes é preciso avançar para alcançar o endereço de
+1. Some os dois campos que ficam antes do endereço de retorno:
+   `64 + 8`.
+2. O resultado é quantos bytes você precisa avançar para chegar ao endereço de
    retorno.
 
 ### Resposta
-Grave **somente o número decimal** em `/home/hacker/resposta-5.txt`, em uma
-linha:
+Somente o número em decimal. Grave em `/home/hacker/resposta-5.txt`.
 
+Abra no nano (como fizemos em aula) e digite:
 ```bash
-printf '%s\n' 'SEU_NUMERO' > /home/hacker/resposta-5.txt   # troque pelo resultado da soma
+nano /home/hacker/resposta-5.txt
 ```
+Salve com `Ctrl+O` e `Enter`, saia com `Ctrl+X`.
+
+Alternativa pelo terminal:
+```bash
+printf '%s\n' 'SEU_NUMERO' > /home/hacker/resposta-5.txt
+```
+Grave como usuário `hacker`, nunca com `sudo`.
 
 ### Verificar
 ```bash
 /challenge/check
 ```
 
-O foco é reconhecer o layout do frame; não é preciso construir uma entrada para
-executar código.
+O foco é reconhecer a organização desses campos na pilha. Não é preciso montar
+uma entrada para executar código.
